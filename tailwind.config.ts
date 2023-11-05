@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
-
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,7 +14,16 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        nunito: ['Nunito', ...defaultTheme.fontFamily.sans],
+      }
     },
+    colors: {
+      ...colors,
+      primary: colors.purple,
+      secondary: colors.rose
+    }
+    
   },
   plugins: [],
 }
