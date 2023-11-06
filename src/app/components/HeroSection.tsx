@@ -6,15 +6,17 @@ const HeroSection = () => {
 		<section className='lg:py-16'>
 			<div className='grid grid-cols-1 sm:grid-cols-12'>
 				<div className='col-span-9 place-self-center text-center sm:text-left sm:justify-self-start'>
-					<h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'>
+					<h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold select-none'>
 						<span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'>Hello, I'm{" "}</span>
 						<br/>
 						<HeadingAnimation/>
 					</h1>
 					<p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6'>Second Year Computer Science Student</p>
 					<div>
-						<button className='px-6 py-3 max-w-[200px] w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>Contact Me</button>
-						<button className='px-1 py-1 max-w-[200px] w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3'>
+						<button className='px-6 py-3 max-w-[200px] w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none'>
+							Contact Me
+						</button>
+						<button className='px-1 py-1 max-w-[200px] w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3 select-none'>
 							<span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span>
 						</button>
 					</div>

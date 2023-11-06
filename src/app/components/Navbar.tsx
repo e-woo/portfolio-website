@@ -10,12 +10,12 @@ const navItems = [
 		href: '#about'
 	},
 	{
-		title: 'Projects',
-		href: '#projects'
-	},
-	{
 		title: 'Skills',
 		href: '#skills'
+	},
+	{
+		title: 'Projects',
+		href: '#projects'
 	},
 	{
 		title: 'Contact',
@@ -61,11 +61,12 @@ const Navbar = () => {
 	);
 };
 
-const NavItem = ({href, title, isOverlay} : {href: Url, title: String, isOverlay: boolean}) => {
+const NavItem = ({href, title, isOverlay} : {href: Url, title: string, isOverlay: boolean}) => {
 	return (
-		<Link href={href} className={'relative block text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white' + (isOverlay ? 
-	'content-[""] before:absolute before:top-full before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-[.3s] hover:before:w-full' : '')}
-		>{title}</Link>
+		<Link href={href} className={'relative block text-[#bbbbbb] sm:text-xl rounded md:p-0 hover:text-white' + (isOverlay ? 
+		'content-[""] before:absolute before:top-full before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-[.3s] hover:text-white hover:before:w-full' : '')}>
+			{title}
+		</Link>
 	);
 };
 
