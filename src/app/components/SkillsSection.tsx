@@ -1,10 +1,12 @@
 import React from 'react'
 import BoxedList from './BoxedList'
-import python from '/public/icons/languages/python.png';
 
 const SkillsSection = () => {
   return (
-    <BoxedList header='Languages' items={languages}/>
+  	<div id='skills' className='py-24'>
+		<BoxedList header='Languages' items={languages}/>
+		<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
+	</div>
   )
 }
 
@@ -17,6 +19,10 @@ const languages = [
         name: 'Java',
         iconPath: '/icons/languages/java.png'
     },
+	{
+		name: 'C',
+		iconPath: '/icons/languages/c.png'
+	},
     {
         name: 'HTML',
         iconPath: '/icons/languages/html.png'
@@ -33,10 +39,37 @@ const languages = [
         name: 'Typescript',
         iconPath: '/icons/languages/typescript.png'
     },
-    {
-        name: 'Assembly',
-        iconPath: '/icons/languages/assembly.png'
-    }
+	{
+		name: 'SQL',
+		iconPath: '/icons/languages/sql.png'
+	}
 ]
+
+const libsAndFrameworks = [
+	{
+		name: 'NumPy',
+		iconPath: '/icons/libs/numpy.png'
+	},
+	{
+		name: 'JUnit',
+		iconPath: '/icons/libs/junit.png'
+	},
+	{
+		name: 'React',
+		iconPath: '/icons/libs/react.png'
+	},
+	{
+		name: 'Node.js',
+		iconPath: '/icons/libs/nodejs.png'
+	},
+	{
+		name: 'Next.js',
+		iconPath: '/icons/libs/nextjs.png'
+	},
+	{
+		name: 'Tailwind CSS',
+		iconPath: '/icons/libs/tailwindcss.png'
+	}
+];
 
 export default SkillsSection
