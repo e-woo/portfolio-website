@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const AboutSection = () => {
 	return (
-		<section className='text-white'>
+		<section className='text-white pt-28' id='about'>
 			<div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 mt-12 sm:py-16'>
 				<Image src='/aboutme.png' alt='' width={400} height={400} className='pointer-events-none place-self-center select-none'/>
 				<div>

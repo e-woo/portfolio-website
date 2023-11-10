@@ -3,7 +3,7 @@ import BoxedList from './BoxedList'
 
 const SkillsSection = () => {
   return (
-  	<div id='skills' className='py-24'>
+  	<div id='skills' className='pt-24'>
 		<BoxedList header='Languages' items={languages}/>
 		<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
 	</div>

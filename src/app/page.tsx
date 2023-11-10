@@ -2,6 +2,7 @@ import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
+import ProjectsSection from './components/ProjectsSection';
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col bg-[#121212] font-nunito'>
@@ -10,6 +11,7 @@ export default function Home() {
 				<HeroSection/>
 				<AboutSection/>
 				<SkillsSection/>
+				<ProjectsSection/>
 			</div>
 		</main>
 	);
