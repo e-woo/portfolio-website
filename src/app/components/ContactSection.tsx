@@ -1,13 +1,13 @@
 "use client"
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 const ContactSection = () => {
     const [formSubmitted, setFormSubmitted] = useState(false); // hook for confirming form submission
     const [formError, setFormError] = useState(false); // hook for form submission errors
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz_qnUUl8ubzBxgSqeQruHjcOBMHalARLMnJ_FgGFCEa3-m9eBZy9yC-bbQn2hMMdlwCA/exec';
-    const handleSubmit = async (e : any) => {
+    const handleSubmit = async (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         fetch(scriptURL, { method: 'POST', body: new FormData(e.target as HTMLFormElement)})
             .then(response => {
@@ -70,7 +70,7 @@ const ContactSection = () => {
                         className='bg-[#1f2324] border border-[#373944] placeholder-[#a6acb4] text-gray-200 text-sm rounded-lg block w-full p-2.5'/>
                     </div>
                     <button type='submit' 
-                    className='mt-3 lg:px-32 py-3 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none text-xl'>
+                    className='mt-3 sm:px-32 py-3 w-full md:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none text-xl'>
                         Submit
                     </button>
                     {formError ? (<p className='text-md text-[#ff4800] text-center md:text-left'>

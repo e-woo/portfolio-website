@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavItem } from './Navbar';
 import { Url } from 'next/dist/shared/lib/router/router';
-const MenuOverlay = ( {navItems} : {navItems: Array<{href: Url, title: String}>}) => {
+const MenuOverlay = ( {navItems} : {navItems: Array<{href: Url, title: string}>}) => {
 	return (
 		<ul className='flex flex-col py-4 items-center'>
 			{

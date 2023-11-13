@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import MenuOverlay from './MenuOverlay';
 
-const navItems = [
+export const navItems = [
 	{
 		title: 'About',
 		href: '#about'
@@ -26,7 +26,7 @@ const navItems = [
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	return (
-		<nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100'>
+		<nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border border-b-[#373944] border-x-transparent border-t-transparent'>
 			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
 			<div className='flex container flex-wrap items-center justify-between mx-auto px-4 py-4 lg:py-6'>
 				<Link href={'/'} className='text-2xl md:text-5xl text-white font-extrabold'>

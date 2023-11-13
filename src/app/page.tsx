@@ -4,6 +4,7 @@ import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col bg-[#121212] font-nunito'>
@@ -15,6 +16,7 @@ export default function Home() {
 				<ProjectsSection/>
 				<ContactSection/>
 			</div>
+			<Footer/>
 		</main>
 	);
 };
