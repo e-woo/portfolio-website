@@ -3,7 +3,7 @@ import BoxedList from './BoxedList'
 
 const SkillsSection = () => {
   return (
-  	<div id='skills' className='pt-24'>
+  	<div id='skills'>
 		<BoxedList header='Languages' items={languages}/>
 		<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
 	</div>
@@ -13,63 +13,63 @@ const SkillsSection = () => {
 const languages = [
     {
         name: 'Python',
-        iconPath: '/icons/languages/python.png',
+        iconPath: '/skills/languages/python.png',
     },
     {
         name: 'Java',
-        iconPath: '/icons/languages/java.png'
+        iconPath: '/skills/languages/java.png'
     },
 	{
 		name: 'C',
-		iconPath: '/icons/languages/c.png'
+		iconPath: '/skills/languages/c.png'
 	},
     {
         name: 'HTML',
-        iconPath: '/icons/languages/html.png'
+        iconPath: '/skills/languages/html.png'
     },
     {
         name: 'CSS',
-        iconPath: '/icons/languages/css.png'
+        iconPath: '/skills/languages/css.png'
     },
     {
         name: 'Javascript',
-        iconPath: '/icons/languages/javascript.png'
+        iconPath: '/skills/languages/javascript.png'
     },
     {
         name: 'Typescript',
-        iconPath: '/icons/languages/typescript.png'
+        iconPath: '/skills/languages/typescript.png'
     },
 	{
 		name: 'SQL',
-		iconPath: '/icons/languages/sql.png'
+		iconPath: '/skills/languages/sql.png'
 	}
-]
+];
 
 const libsAndFrameworks = [
 	{
 		name: 'NumPy',
-		iconPath: '/icons/libs/numpy.png'
+		iconPath: '/skills/libs/numpy.png'
 	},
 	{
 		name: 'JUnit',
-		iconPath: '/icons/libs/junit.png'
+		iconPath: '/skills/libs/junit.png'
 	},
 	{
 		name: 'React',
-		iconPath: '/icons/libs/react.png'
+		iconPath: '/skills/libs/react.png'
 	},
 	{
 		name: 'Node.js',
-		iconPath: '/icons/libs/nodejs.png'
+		iconPath: '/skills/libs/nodejs.png'
 	},
 	{
 		name: 'Next.js',
-		iconPath: '/icons/libs/nextjs.png'
+		iconPath: '/skills/libs/nextjs.png'
 	},
 	{
 		name: 'Tailwind CSS',
-		iconPath: '/icons/libs/tailwindcss.png'
+		iconPath: '/skills/libs/tailwindcss.png'
 	}
 ];
 
-export default SkillsSection
+export default SkillsSection;
