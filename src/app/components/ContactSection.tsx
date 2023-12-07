@@ -20,10 +20,10 @@ const ContactSection = () => {
                 console.log(error);
                 setFormError(true);
             });
-    };
+    }
 
     return (
-        <section className='grid md:grid-cols-2 my-12 py-24 lg:px-16 gap-4 relative' id='contact'>
+        <section className='grid md:grid-cols-2 my-12 pt-48 pb-24 lg:px-16 gap-4 relative' id='contact'>
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
             <div className='flex flex-col gap-4 items-center md:items-start'>
                 <h2 className='text-5xl lg:text-7xl text-center md:text-left font-bold mb-4'>Contact Me</h2>
@@ -78,8 +78,8 @@ const ContactSection = () => {
                 }
             </div>
         </section>
-    );
-};
+    )
+}
 
 
 

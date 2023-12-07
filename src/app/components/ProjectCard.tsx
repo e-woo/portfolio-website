@@ -26,7 +26,7 @@ const ProjectCard = ({ name, tools, description, imagePath, link, githubLink } :
 				</div>
 			</div>
 		</div>
-  );
-};
+	)
+}
 
 export default ProjectCard;

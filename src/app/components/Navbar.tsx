@@ -21,7 +21,7 @@ export const navItems = [
 		title: 'Contact',
 		href: '#contact'
 	}
-]
+];
 
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -58,7 +58,7 @@ const Navbar = () => {
 			{navbarOpen ? <MenuOverlay navItems={navItems} onClick={() => setNavbarOpen(false)}/> : null}
 		</nav>
 	);
-};
+}
 
 export const NavItem = ({href, title, isOverlay, onClick} : {href: Url, title: string, isOverlay: boolean, onClick?: MouseEventHandler}) => {
 	return (
@@ -68,7 +68,7 @@ export const NavItem = ({href, title, isOverlay, onClick} : {href: Url, title: s
 			{title}
 		</Link>
 	);
-};
+}
 
 
 

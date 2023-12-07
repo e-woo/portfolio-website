@@ -15,7 +15,7 @@ const BoxedList = ({header, items} : {header : string, items : Array<{name: stri
 				</div>
 		</div>
 	);
-};
+}
 
 const Item = ({name, iconPath} : {name : string, iconPath : string}) => {
 	return (
@@ -26,6 +26,6 @@ const Item = ({name, iconPath} : {name : string, iconPath : string}) => {
 			
 		
 	);
-};
+}
 
 export default BoxedList;

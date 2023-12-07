@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 const ProjectsSection = () => {
 	return (
-		<div id='projects'>
+		<div id='projects' className='pt-24'>
 			<h1 className='py-16 place-self-center text-center text-6xl font-bold'>Projects</h1>
 			<div>
 				<ul className='grid lg:mx-16 lg:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-24 xl:gap-12'>
@@ -14,8 +14,8 @@ const ProjectsSection = () => {
 				</ul>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
 const projects = [
 	{
@@ -70,6 +70,6 @@ const projects = [
 	// 	link: null,
 	// 	githubLink: ''
 	// }
-];
+]
 
 export default ProjectsSection;

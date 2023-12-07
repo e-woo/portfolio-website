@@ -28,8 +28,8 @@ const HeroSection = () => {
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
 const HeadingAnimation = () => {
 	return (<TypeAnimation
@@ -41,7 +41,7 @@ const HeadingAnimation = () => {
 		wrapper='span'
 		speed={50}
 		repeat={Infinity}
-	/>);
-};
+	/>)
+}
 
 export default HeroSection;

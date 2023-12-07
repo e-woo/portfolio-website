@@ -3,7 +3,7 @@ import BoxedList from './SkillsList'
 
 const SkillsSection = () => {
   return (
-  	<div id='skills'>
+  	<div id='skills' className='pt-24'>
 		<BoxedList header='Languages' items={languages}/>
 		<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
 	</div>
@@ -43,7 +43,7 @@ const languages = [
 		name: 'SQL',
 		iconPath: '/skills/languages/sql.png'
 	}
-];
+]
 
 const libsAndFrameworks = [
 	{
@@ -70,6 +70,6 @@ const libsAndFrameworks = [
 		name: 'Tailwind CSS',
 		iconPath: '/skills/libs/tailwindcss.png'
 	}
-];
+]
 
 export default SkillsSection;
