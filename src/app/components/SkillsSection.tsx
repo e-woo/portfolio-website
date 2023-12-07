@@ -1,5 +1,5 @@
 import React from 'react'
-import BoxedList from './BoxedList'
+import BoxedList from './SkillsList'
 
 const SkillsSection = () => {
   return (
@@ -20,8 +20,8 @@ const languages = [
         iconPath: '/skills/languages/java.png'
     },
 	{
-		name: 'C',
-		iconPath: '/skills/languages/c.png'
+		name: 'C#',
+		iconPath: '/skills/languages/csharp.png'
 	},
     {
         name: 'HTML',

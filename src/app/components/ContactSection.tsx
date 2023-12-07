@@ -6,16 +6,18 @@ const ContactSection = () => {
     const [formSubmitted, setFormSubmitted] = useState(false); // hook for confirming form submission
     const [formError, setFormError] = useState(false); // hook for form submission errors
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz_qnUUl8ubzBxgSqeQruHjcOBMHalARLMnJ_FgGFCEa3-m9eBZy9yC-bbQn2hMMdlwCA/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEur96IWkwNmJccStEqSyZwB4djk9Ao4LXSimCRCnp3u-9ao2iydcCApEPi5jsLYjI/exec';
     const handleSubmit = async (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(e.target as HTMLFormElement)})
-            .then(response => {
-                console.log('Success!', response);
+        fetch(scriptURL, { 
+                method: 'POST',
+                body: new FormData(e.target as HTMLFormElement)
+            })
+            .then(() => {
                 setFormSubmitted(true);
             })
             .catch(error => {
-                console.error('Error!', error.message);
+                console.log(error);
                 setFormError(true);
             });
     };
@@ -37,9 +39,6 @@ const ContactSection = () => {
                 <div className='flex flex-row gap-4 text-5xl'>
                     <a href='https://github.com/e-woo' target='_blank'>
                         <i className='bx bxl-github text-white md:text-slate-400 md:hover:text-white transition-[.5s]'/>
-                    </a>
-                    <a href=''>
-                        <i className='bx bxl-linkedin-square text-white md:text-slate-400 md:hover:text-white transition-[.5s]'/>
                     </a>
                 </div>
                 <Link href='#about'>
@@ -70,7 +69,7 @@ const ContactSection = () => {
                         className='bg-[#1f2324] border border-[#373944] placeholder-[#a6acb4] text-gray-200 text-sm rounded-lg block w-full p-2.5'/>
                     </div>
                     <button type='submit' 
-                    className='mt-3 sm:px-32 py-3 w-full md:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none text-xl'>
+                    className='mt-3 sm:px-32 py-3 w-full md:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none text-xl font-semibold'>
                         Submit
                     </button>
                     {formError ? (<p className='text-md text-[#ff4800] text-center md:text-left'>

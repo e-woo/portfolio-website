@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectCard = ({ name, tools, description, imagePath, link, githubLink } : { name: string, tools: string, description: React.JSX.Element, imagePath: string, link: string, githubLink: string }) => {
+const ProjectCard = ({ name, tools, description, imagePath, link, githubLink } : { name: string, tools: string, description: React.JSX.Element, imagePath: string, link: string | null, githubLink: string }) => {
   return (
 		<div className='mx-auto h-full rounded-lg text-white text-center p-[3px] overflow-hidden bg-gradient-to-br from-primary-500 to-secondary-500 relative'>
 			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
@@ -10,9 +10,11 @@ const ProjectCard = ({ name, tools, description, imagePath, link, githubLink } :
 						<a href={githubLink} target='_blank'>
 							<i className='b1 bx bxl-github border-2 rounded-full p-1 border-slate-400 text-slate-400 hover:border-white hover:text-white md:-translate-y-32 transition-[.3s] duration-300  mx-2'/>
 						</a>
+						{link === null ? <></> :
 						<a href={link} target='_blank'>
 							<i className='b2 bx bx-link border-2 rounded-full p-1 border-slate-400 text-slate-400 hover:border-white hover:text-white md:-translate-y-32 transition-[.3s] duration-300 delay-75 mx-2'/>
 						</a>
+						}
 					</div>
 				</div>
 				<div className='p-4 justify-center min-h-36 md:h-full'>

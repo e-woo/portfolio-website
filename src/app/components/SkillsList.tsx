@@ -8,7 +8,7 @@ const BoxedList = ({header, items} : {header : string, items : Array<{name: stri
 				<div className='border-[#474747] border rounded-md px-2 mt-4 pt-6 pb-4 flex flex-col'>
 					<ul className='items-center px-2 py-0 sm:p-4 gap-x-6 gap-y-4 justify-center flex flex-wrap'>
 						{items.map((item, index) => 
-						<li key={index} className='rounded hover:text-white sm:text-xl hover:-translate-y-3 transition-[1s] druation-1000 ease-in-out'>
+						<li key={index} className='rounded hover:text-white sm:text-xl md:hover:-translate-y-3 transition-[1s] duration-1000 ease-in-out'>
 							<Item name={item.name} iconPath={item.iconPath}/>
 						</li>)}
 					</ul>
@@ -19,9 +19,9 @@ const BoxedList = ({header, items} : {header : string, items : Array<{name: stri
 
 const Item = ({name, iconPath} : {name : string, iconPath : string}) => {
 	return (
-	<div className='md:hover:bg-[#3c4545] sm:rounded-xl sm:px-2 sm:py-2 lg:px-3 md:[&>p]:hover:opacity-100 max-w-[40px] sm:max-w-[60px] md:max-w-full transition-[.5s]'>
-		<Image src={iconPath} alt={name} width={90} height={90} className='pointer-events-none place-self-center self-center select-none'/>
-		<p className='w-0 h-0 md:w-full md:h-full text-center md:pt-3 opacity-0 select-none whitespace-pre-line transition-[0s]'>{name}</p>
+	<div className='md:hover:bg-[#3c4545] sm:rounded-xl sm:px-2 sm:py-2 lg:px-3 md:[&>p]:hover:opacity-100 max-w-[40px] sm:max-w-[60px] md:max-w-full transition-[.5s] flex flex-col items-center'>
+		<Image src={iconPath} alt={name} width={90} height={90} className='pointer-events-none select-none h-auto'/>
+		<p className='hidden md:block text-center md:pt-3 opacity-0 select-none whitespace-pre-line transition-[0s]'>{name}</p>
 	</div>
 			
 		

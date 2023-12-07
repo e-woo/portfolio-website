@@ -1,6 +1,6 @@
-"use client"
-import React from 'react'
-import { NavItem, navItems } from './Navbar'
+"use client";
+import React from 'react';
+import { NavItem, navItems } from './Navbar';
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
