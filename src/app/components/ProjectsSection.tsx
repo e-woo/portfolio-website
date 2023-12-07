@@ -43,7 +43,7 @@ const projects = [
 			Users can also host their own clubs, programs, events and post volunteering opportunities and announcements.
 			<br/><br/><b>Project is currently a work in progress.</b>
 		</>,
-		imagePath: '/projects/DinoDB.png',
+		imagePath: '/projects/dinodb.png',
 		link: null,
 		githubLink: 'https://github.com/e-woo/dinodb'
 	},
