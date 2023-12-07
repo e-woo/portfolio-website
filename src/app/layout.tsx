@@ -16,6 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <title>Ethan Woo</title>
+      <link rel='icon' type='image/x-icon' href='/favicon/favicon.ico'/>
       <body className={inter.className}>{children}</body>
     </html>
   )

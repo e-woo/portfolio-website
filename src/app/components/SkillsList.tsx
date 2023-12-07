@@ -8,7 +8,7 @@ const BoxedList = ({header, items} : {header : string, items : Array<{name: stri
 				<div className='border-[#474747] border rounded-md px-2 mt-4 pt-6 pb-4 flex flex-col'>
 					<ul className='items-center px-2 py-0 sm:p-4 gap-x-6 gap-y-4 justify-center flex flex-wrap'>
 						{items.map((item, index) => 
-						<li key={index} className='rounded hover:text-white sm:text-xl md:hover:-translate-y-3 transition-[1s] duration-1000 ease-in-out'>
+						<li key={index} className='rounded hover:text-white sm:text-xl md:hover:-translate-y-3 transition-[1s] ease-in-out'>
 							<Item name={item.name} iconPath={item.iconPath}/>
 						</li>)}
 					</ul>
