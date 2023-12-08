@@ -34,14 +34,15 @@ const projects = [
 	},
 	{
 		name: 'DinoDB',
-		tools: 'Typescript, HTML, CSS, React, Node.js, MySQL',
+		tools: 'Typescript, Javascript, HTML, Tailwind CSS, React, Node.js, MySQL',
 		description: <>
 			DinoDB is a full stack team project which involved us creating a website and a database, with MySQL.
 			<br/><br/>
 			The goal was to develop a database of extracurriculars at UCalgary, where users can easily find information on any activity, all in one place.
 			<br/><br/>
 			Users can also host their own clubs, programs, events and post volunteering opportunities and announcements.
-			<br/><br/><b>Project is currently a work in progress.</b>
+			<br/><br/>
+			<b>Project is currently a work in progress.</b>
 		</>,
 		imagePath: '/projects/dinodb.png',
 		link: null,
@@ -49,7 +50,7 @@ const projects = [
 	},
 	{
 		name: 'Recommendify',
-		tools: 'Typescript, HTML, CSS, React, Tailwind CSS',
+		tools: 'Typescript, HTML, Tailwind CSS, React',
 		description: <>
 			Recommendify is a simple web application that generates Spotify playlists for users.
 			<br/><br/>
