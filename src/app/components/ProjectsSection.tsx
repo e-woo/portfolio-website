@@ -61,7 +61,7 @@ const projects = [
 		</>,
 		imagePath: '/projects/recommendify.png',
 		link: 'https://recommendify.netlify.app',
-		githubLink: ''
+		githubLink: 'https://github.com/e-woo/recommendify'
 	}
 	// {
 	// 	name: '',
