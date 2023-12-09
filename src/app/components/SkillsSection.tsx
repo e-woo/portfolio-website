@@ -32,11 +32,11 @@ const languages = [
         iconPath: '/skills/languages/css.png'
     },
     {
-        name: 'Javascript',
+        name: 'JavaScript',
         iconPath: '/skills/languages/javascript.png'
     },
     {
-        name: 'Typescript',
+        name: 'TypeScript',
         iconPath: '/skills/languages/typescript.png'
     },
 	{
