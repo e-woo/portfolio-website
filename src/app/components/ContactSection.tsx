@@ -40,6 +40,9 @@ const ContactSection = () => {
                     <a href='https://github.com/e-woo' target='_blank'>
                         <i className='bx bxl-github text-white md:text-slate-400 md:hover:text-white transition-[.5s]'/>
                     </a>
+                    <a href='https://www.linkedin.com/in/ethan-wooo/' target='_blank'>
+                        <i className='bx bxl-linkedin-square text-white md:text-slate-400 md:hover:text-white transition-[.5s]'/>
+                    </a>
                 </div>
                 <Link href='#about'>
                     <button 
