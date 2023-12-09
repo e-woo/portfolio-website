@@ -24,9 +24,9 @@ const projects = [
 		description: <>
 			The Nether Depths Mod is a mod developed for the popular game <i>Minecraft: Java Edition</i>, using the <i>Fabric API</i>, a powerful modding tool.
 			<br/><br/>
-			Some features involved the usage of a mixin library, allowing for the injection of code into the base game's source code.
+			Some features involved the usage of a mixin library, allowing for the injection of code into the base game's source code at precise locations, allowing more freedom in combining new and existing functionality.
 			<br/><br/>
-			Development of this project required me to interpret and extrapolate important details from an existing codebase of considerable size. Knowledge of object oriented concepts were integral to its success.
+			Development of this project required me to interpret and extrapolate important details from an existing codebase of considerable size.
 		</>,
 		imagePath: '/projects/netherdepthsmod.png',
 		link: null,
@@ -34,11 +34,11 @@ const projects = [
 	},
 	{
 		name: 'DinoDB',
-		tools: 'Typescript, Javascript, HTML, Tailwind CSS, React, Node.js, MySQL',
+		tools: 'Typescript, Javascript, HTML, Tailwind CSS, React, Express.js, MySQL',
 		description: <>
 			DinoDB is a full stack team project which involved us creating a website and a database, with MySQL.
 			<br/><br/>
-			The goal was to develop a database of extracurriculars at UCalgary, where users can easily find information on any activity, all in one place.
+			The goal was to develop a database of extracurriculars at UCalgary, where users can easily find information on any activity, all in one place. The project implements a RESTful API to facilitate communication between the website and the server, which accesses the database.
 			<br/><br/>
 			Users can also host their own clubs, programs, events and post volunteering opportunities and announcements.
 			<br/><br/>
@@ -57,7 +57,7 @@ const projects = [
 			It interacts with different endpoints of the Spotify API, such as fetching a user's profile, searching for artists/tracks, using Spotify's recommendation API to generate playlists, and saving said playlists to user's Spotify profiles.
 			<br/><br/>
 			This project involved interacting with the Fetch API to submit HTTP requests and handle responses. It was developed in a Vite environment.
-			<br/><br/><b>Due to restrictions on Spotify Developer apps, this app currently only works for whitelisted users. Please contact me if you would like to try it.</b>
+			<br/><br/><b>Note: Due to restrictions on Spotify Developer apps, this app currently only works for whitelisted users. Please contact me if you would like to try it.</b>
 		</>,
 		imagePath: '/projects/recommendify.png',
 		link: 'https://recommendify.netlify.app',

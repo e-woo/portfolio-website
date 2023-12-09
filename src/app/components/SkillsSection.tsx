@@ -51,10 +51,6 @@ const libsAndFrameworks = [
 		iconPath: '/skills/libs/numpy.png'
 	},
 	{
-		name: 'JUnit',
-		iconPath: '/skills/libs/junit.png'
-	},
-	{
 		name: 'React',
 		iconPath: '/skills/libs/react.png'
 	},
@@ -65,6 +61,10 @@ const libsAndFrameworks = [
 	{
 		name: 'Next.js',
 		iconPath: '/skills/libs/nextjs.png'
+	},
+	{
+		name: 'Express.js',
+		iconPath: '/skills/libs/expressjs.png'
 	},
 	{
 		name: 'Tailwind CSS',
