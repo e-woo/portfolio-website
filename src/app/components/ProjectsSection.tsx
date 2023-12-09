@@ -29,7 +29,7 @@ const projects = [
 			Development of this project required me to interpret and extrapolate important details from an existing codebase of considerable size.
 		</>,
 		imagePath: '/projects/netherdepthsmod.png',
-		link: null,
+		link: 'https://modrinth.com/mod/nether-depths-mod',
 		githubLink: 'https://github.com/e-woo/nether_depths_mod'
 	},
 	{
