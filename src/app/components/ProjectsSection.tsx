@@ -41,8 +41,6 @@ const projects = [
 			The goal was to develop a database of extracurriculars at UCalgary, where users can easily find information on any activity, all in one place. The project implements a RESTful API to facilitate communication between the website and the server, which accesses the database.
 			<br/><br/>
 			Users can also host their own clubs, programs, events and post volunteering opportunities and announcements.
-			<br/><br/>
-			<b>Project is currently a work in progress.</b>
 		</>,
 		imagePath: '/projects/dinodb.png',
 		link: null,
