@@ -55,7 +55,7 @@ const projects = [
 			It interacts with different endpoints of the Spotify API, such as fetching a user's profile, searching for artists/tracks, using Spotify's recommendation API to generate playlists, and saving said playlists to user's Spotify profiles.
 			<br/><br/>
 			This project involved interacting with the Fetch API to submit HTTP requests and handle responses. It was developed in a Vite environment.
-			<br/><br/><b>Note: Due to restrictions on Spotify Developer apps, this app currently only works for whitelisted users. Please contact me if you would like to try it.</b>
+			<br/><br/>
 		</>,
 		imagePath: '/projects/recommendify.png',
 		link: 'https://recommendify.netlify.app',
