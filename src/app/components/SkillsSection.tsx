@@ -13,12 +13,16 @@ const SkillsSection = () => {
 const languages = [
     {
         name: 'Python',
-        iconPath: '/skills/languages/python.png',
+        iconPath: '/skills/languages/python.png'
     },
     {
         name: 'Java',
         iconPath: '/skills/languages/java.png'
     },
+	{
+		name: 'C',
+		iconPath: '/skills/languages/c.png'
+	},
 	{
 		name: 'C#',
 		iconPath: '/skills/languages/csharp.png'
