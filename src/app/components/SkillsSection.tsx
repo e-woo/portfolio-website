@@ -51,8 +51,16 @@ const languages = [
 
 const libsAndFrameworks = [
 	{
-		name: 'NumPy',
-		iconPath: '/skills/libs/numpy.png'
+		name: 'Blazor',
+		iconPath: '/skills/libs/blazor.png'
+	},
+	{
+		name: 'ASP.NET Core',
+		iconPath: '/skills/libs/aspnetcore.png'
+	},
+	{
+		name: 'EF Core',
+		iconPath: '/skills/libs/efcore.png'
 	},
 	{
 		name: 'React',
