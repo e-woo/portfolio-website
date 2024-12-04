@@ -11,9 +11,11 @@ const cameraStates = [
     { position: new THREE.Vector3(-1.08, 1.33, 4.27), rotation: new THREE.Euler(-0.27, 0.44, 0.12) },
     { position: new THREE.Vector3(-1.66, 0.99, 1.72), rotation: new THREE.Euler(-0.22, -0.11, -0.02) },
     { position: new THREE.Vector3(0.48, 2.33, 0.56), rotation: new THREE.Euler(-0.54, 0.60, 0.32) },
-    { position: new THREE.Vector3(-2.97, 3.62, 1.04), rotation: new THREE.Euler(-0.40, 0.26, 0.11) },
+    { position: new THREE.Vector3(-2.97, 3.62, 1.04), rotation: new THREE.Euler(-0.40, 0.06, 0.11) },
     { position: new THREE.Vector3(-0.86, 3.89, -1.22), rotation: new THREE.Euler(-0.44, 0.22, 0.10) },
 ];
+
+const bgOpacity = [20, 30, 30, 30, 30];
 
 const ThreeScene = forwardRef<CameraControls>((props, ref) => {
     const mountRef = useRef<HTMLDivElement>(null);
@@ -28,8 +30,8 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
     const durationRef = useRef<number>(0);  // Duration for the transition (in seconds)
     const currentTimeRef = useRef<number>(0);  // Tracks the elapsed time for the current transition
 
-  const isTransitioningRef = useRef<boolean>(false);  // Flag to check if a transition is in progress
-
+    const isTransitioningRef = useRef<boolean>(false);  // Flag to check if a transition is in progress
+    
     const [cameraProperties, setCameraProperties] = useState({
         position: { x: 0, y: 0, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
@@ -140,11 +142,9 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
                         console.log("Done!");
                         if (targetRotationRef.current) {
                             const euler = new THREE.Euler().setFromQuaternion(targetRotationRef.current);
-                            console.log("Rotation: " + euler.x + ", " + euler.y + ", " + euler.z);
                             cameraRef.current.rotation.set(euler.x, euler.y, euler.z);
                         }
                         if (targetPositionRef.current) {
-                            console.log("Position: " + targetPositionRef.current.x + ", " + targetPositionRef.current.y + ", " + targetPositionRef.current.z);
                             cameraRef.current.position.copy(targetPositionRef.current);
                         }
                         isTransitioningRef.current = false; // Transition complete
@@ -206,16 +206,17 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
     }));
 
     return (
-        <div className="-z-50">
-            <div ref={mountRef} className='absolute top-0 left-0' />
-            <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1, color: 'white' }}>
+        <div className='fixed top-0 left-0'>
+            <div ref={mountRef} className='' />
+            {/* <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1, color: 'white' }}>
                 <h3>Camera Properties</h3>
                 <p><strong>Position:</strong> x: {cameraProperties.position.x.toFixed(2)}, y: {cameraProperties.position.y.toFixed(2)}, z: {cameraProperties.position.z.toFixed(2)}</p>
                 <p><strong>Rotation:</strong> x: {cameraProperties.rotation.x.toFixed(2)}, y: {cameraProperties.rotation.y.toFixed(2)}, z: {cameraProperties.rotation.z.toFixed(2)}</p>
                 <p><strong>Zoom:</strong> {cameraProperties.zoom}</p>
                 <p><strong>Field of View (FOV):</strong> {cameraProperties.fov}</p>
-            </div>
+            </div> */}
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black from-30% pointer-events-none' />
+            <div className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-30`} />
         </div>
     )
 });

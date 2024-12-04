@@ -19,8 +19,10 @@ const config: Config = {
 			},
 			colors: {
 				...colors,
-				primary: colors.green,
-				secondary: colors.cyan
+				// primary: colors.green,
+				// secondary: colors.cyan
+				primary: colors.pink,
+				secondary: colors.violet
 			}
 		}
 	},

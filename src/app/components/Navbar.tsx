@@ -26,9 +26,9 @@ export const navItems = [
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	return (
-		<nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border border-b-[#373944] border-x-transparent border-t-transparent min-h-[8vh]'>
+		<nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] lg:bg-transparent bg-opacity-100 border lg:border-0 border-b-[#373944] border-x-transparent border-t-transparent min-h-[8vh]'>
 			<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
-			<div className='flex container flex-wrap items-center justify-between mx-auto px-4 py-4 lg:py-6'>
+			<div className='flex flex-wrap items-center justify-between px-4 lg:px-12 py-4 lg:py-6'>
 				<Link href={'/'} className='text-2xl md:text-5xl text-white font-extrabold'>
 					Ethan Woo
 				</Link>
@@ -45,7 +45,7 @@ const Navbar = () => {
 					}
 				</div>
 				<div className='menu hidden lg:block lg:w-auto' id='navbar'>
-					<ul className='flex items-center p-4 md:p-0 md:flex-row md:space-x-8 mt-0 gap-6'>
+					<ul className='flex items-center p-4 md:p-0 md:flex-row md:space-x-8 mt-0 gap-3'>
 						{
 							navItems.map((item, index) =>
 							<li key={index}>

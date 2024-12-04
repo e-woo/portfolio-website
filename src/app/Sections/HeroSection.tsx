@@ -4,7 +4,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 const HeroSection = () => {
 	return (
-		<section className='lg:py-16'>
+		<section className='lg:py-16 w-full h-full flex items-center px-16'>
 			<div className='grid grid-cols-1 lg:grid-cols-12'>
 				<div className='col-span-9 place-self-center text-center lg:text-left lg:justify-self-start'>
 					<h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold select-none h-28 lg:h-auto'>
@@ -12,7 +12,7 @@ const HeroSection = () => {
 						<br/>
 						<HeadingAnimation/>
 					</h1>
-					<p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6'>Second Year Computer Science Student</p>
+					<p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6'>Computer Science Student</p>
 					<div>
 						<Link href='#contact'>
 							<button className='px-8 py-3 max-w-[200px] w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white select-none'>

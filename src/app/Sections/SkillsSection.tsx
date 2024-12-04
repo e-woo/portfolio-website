@@ -1,11 +1,17 @@
 import React from 'react'
-import BoxedList from './SkillsList'
+import BoxedList from '../components/SkillsList'
 
 const SkillsSection = () => {
   return (
-  	<div id='skills' className='pt-24'>
-		<BoxedList header='Languages' items={languages}/>
-		<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
+  	// <div id='skills' className='pt-24'>
+	// 	<BoxedList header='Languages' items={languages}/>
+	// 	<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
+	// </div>
+	<div className='w-full h-full lg:grid lg:grid-cols-2 gap-8 items-center py-8 px-4 mt-12 sm:py-16 flex flex-col'>
+		<div className=''>
+			<div>
+			 </div>
+		</div>
 	</div>
   )
 }

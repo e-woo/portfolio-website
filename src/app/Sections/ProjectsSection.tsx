@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../components/ProjectCard';
 const ProjectsSection = () => {
 	return (
 		<div id='projects' className='pt-24'>
