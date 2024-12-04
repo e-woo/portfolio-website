@@ -8,9 +8,9 @@ import ContactSection from './Sections/ContactSection';
 import Footer from './components/Footer';
 import ThreeScene, { CameraControls } from './components/Models/ThreeScene';
 import { useEffect, useRef, useState } from 'react';
-import ScrollDots from './components/ScrollDots';
+import ScrollDots, { ScrollItem } from './components/ScrollDots';
 
-const sections: string[] = ['section1', 'section2', 'section3', 'section4', 'section5'];
+const sections: string[] = ['Top', 'About Me', 'Skills', 'Projects', 'Contact'];
 
 export default function Home() {
 	const sceneRef = useRef<CameraControls | null>(null);
@@ -21,13 +21,20 @@ export default function Home() {
 	const touchStartY = useRef<number>(0); // Track the starting position for touch
 	const touchDeltaY = useRef<number>(0); // Track the distance moved during touch
 
-	const sectionScrollCallbacks = sections.map(() => (index: number) => {
-		if (sceneRef.current) {
-			sceneRef.current.moveToPosition(index, scrollTime);
+	const sectionScrollCallbacks : ScrollItem[] = sections.map((section) => ({
+		section: section,
+		callback: (index: number) => {
+			if (isScrolling.current) {
+				return;
+			}
+			
+			if (sceneRef.current) {
+				sceneRef.current.moveToPosition(index, scrollTime);
+			}
+			setCurrentSection(index);
+			scrollToSection(index);
 		}
-		setCurrentSection(index);
-		scrollToSection(index);
-	});
+	}));
 
 	// Handle the scroll event
 	const handleScroll = (event: WheelEvent | TouchEvent): void => {
@@ -114,19 +121,19 @@ export default function Home() {
 	  		<div className='absolute block z-50'>
 			  	<Navbar />
 				<ScrollDots sections={sectionScrollCallbacks} />
-				<div key="section1" id="section1" className='h-screen w-screen'>
+				<div key="Top" id="Top" className='h-screen w-screen'>
 					<HeroSection />
 				</div>
-				<div key="section2" id="section2" className='h-screen w-screen'>
+				<div key="About Me" id="About Me" className='h-screen w-screen'>
 					<AboutSection />
 				</div>
-				<div key="section3" id="section3" className='h-screen w-screen'>
+				<div key="Skills" id="Skills" className='h-screen w-screen'>
 					<SkillsSection />
 				</div>
-				<div key="section4" id="section4" className='h-screen w-screen'>
+				<div key="Projects" id="Projects" className='h-screen w-screen'>
 					<ProjectsSection />
 				</div>
-				<div key="section5" id="section5" className='h-screen w-screen'>
+				<div key="Contact" id="Contact" className='h-screen w-screen'>
 					<ContactSection />
 				</div>
 			</div>
