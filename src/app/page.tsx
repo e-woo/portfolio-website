@@ -10,7 +10,8 @@ import ThreeScene, { CameraControls } from './components/Models/ThreeScene';
 import { useEffect, useRef, useState } from 'react';
 import ScrollDots, { ScrollItem } from './components/ScrollDots';
 
-const sections: string[] = ['Top', 'About Me', 'Skills', 'Projects', 'Contact'];
+const sectionNames: string[] = ['Top', 'About Me', 'Skills', 'Projects', 'Contact'];
+const sections = sectionNames.map((sectionName) => sectionName.replace(' ', ''));
 
 export default function Home() {
 	const sceneRef = useRef<CameraControls | null>(null);
@@ -21,8 +22,8 @@ export default function Home() {
 	const touchStartY = useRef<number>(0); // Track the starting position for touch
 	const touchDeltaY = useRef<number>(0); // Track the distance moved during touch
 
-	const sectionScrollCallbacks : ScrollItem[] = sections.map((section) => ({
-		section: section,
+	const sectionScrollCallbacks : ScrollItem[] = sectionNames.map((sectionName) => ({
+		sectionName: sectionName,
 		callback: (index: number) => {
 			if (isScrolling.current) {
 				return;
@@ -42,7 +43,6 @@ export default function Home() {
 			return;
 		}
 
-		isScrolling.current = true;
 		let delta = 0;
 		if (event instanceof WheelEvent) {
 			delta = event.deltaY;
@@ -51,6 +51,16 @@ export default function Home() {
 			touchDeltaY.current = touchStartY.current - touchMoveY;
 			delta = touchDeltaY.current;
 		}
+
+		if (delta > 0 && currentSection >= sections.length - 1) {
+			return;
+		}
+
+		if (delta < 0 && currentSection <= 0) {
+			return;
+		}
+
+		isScrolling.current = true;
 		const direction = delta > 0 ? 1 : -1;
 		const nextSection = Math.max(0, Math.min(sections.length - 1, currentSection + direction));
 
@@ -79,8 +89,9 @@ export default function Home() {
   // Scroll to the specific section
   const scrollToSection = (sectionIndex: number): void => {
     const section = document.getElementById(sections[sectionIndex]);
+	console.log("test");
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+		section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -120,11 +131,13 @@ export default function Home() {
       <div key="section5" id="section5" className="snap-start bg-blue-400 h-screen w-screen"></div> */}
 	  		<div className='absolute block z-50'>
 			  	<Navbar />
-				<ScrollDots sections={sectionScrollCallbacks} />
+				<div className='fixed top-1/2 right-4 transform -translate-y-1/2 '>
+					<ScrollDots scrollItems={sectionScrollCallbacks} activeIndex={currentSection} />
+				</div>
 				<div key="Top" id="Top" className='h-screen w-screen'>
 					<HeroSection />
 				</div>
-				<div key="About Me" id="About Me" className='h-screen w-screen'>
+				<div key="AboutMe" id="AboutMe" className='h-screen w-screen'>
 					<AboutSection />
 				</div>
 				<div key="Skills" id="Skills" className='h-screen w-screen'>
