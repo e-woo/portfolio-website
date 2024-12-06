@@ -15,7 +15,7 @@ const sections = sectionNames.map((sectionName) => sectionName.replace(' ', ''))
 
 export default function Home() {
 	const sceneRef = useRef<CameraControls | null>(null);
-	const scrollTime = 2; // Time in seconds to scroll to the next section
+	const scrollTime = 1; // Time in seconds to scroll to the next section
 
 	const [currentSection, setCurrentSection] = useState<number>(0);
 	const isScrolling = useRef<boolean>(false); // Prevent rapid scrolling
@@ -25,12 +25,8 @@ export default function Home() {
 	const sectionScrollCallbacks : ScrollItem[] = sectionNames.map((sectionName) => ({
 		sectionName: sectionName,
 		callback: (index: number) => {
-			if (isScrolling.current) {
-				return;
-			}
-			
 			if (sceneRef.current) {
-				sceneRef.current.moveToPosition(index, scrollTime);
+				sceneRef.current.moveToPosition(index, scrollTime * 2);
 			}
 			setCurrentSection(index);
 			scrollToSection(index);
@@ -89,7 +85,6 @@ export default function Home() {
   // Scroll to the specific section
   const scrollToSection = (sectionIndex: number): void => {
     const section = document.getElementById(sections[sectionIndex]);
-	console.log("test");
     if (section) {
 		section.scrollIntoView({ behavior: 'smooth' });
     }

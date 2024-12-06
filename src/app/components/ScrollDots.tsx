@@ -10,6 +10,7 @@ const ScrollDots = ({ activeIndex, scrollItems } : { activeIndex: number, scroll
     const listItemsRef = useRef<(HTMLDivElement | null)[]>([]); // Refs for each dot
  
     const handleDotClick = (index: number) => {
+
         activeIndex = index;
         const callback = scrollItems[index].callback;
         if (callback) {

@@ -193,8 +193,10 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
         targetRotationRef.current = new THREE.Quaternion().setFromEuler(target.rotation);
     }
     const moveToPosition = (index: number, duration: number) => {
-        if (isTransitioningRef.current) return;  // Ignore if already transitioning
+        // if (isTransitioningRef.current) return;  // Ignore if already transitioning
         durationRef.current = duration;
+        clockRef.current = new THREE.Clock();
+        currentTimeRef.current = 0;
         currentTargetIndexRef.current = index;
         setNextTarget(index);
         isTransitioningRef.current = true;  // Start the transition
