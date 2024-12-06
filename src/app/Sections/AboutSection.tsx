@@ -3,7 +3,7 @@ import Image from 'next/image'
 const AboutSection = () => {
 	return (
 		<section className='w-full h-full text-white pt-28 px-16' id='about'>
-			<div className='lg:grid lg:grid-cols-2 gap-8 items-center py-8 px-4 mt-12 sm:py-16 flex flex-col'>
+			<div className='lg:grid lg:grid-cols-2 gap-8 items-center py-8 px-4 sm:py-16 flex flex-col'>
 				{/* <Image src='/aboutme.png' alt='' width={400} height={400} className='pointer-events-none place-self-center select-none h-auto' priority/> */}
 				<div>
 					<h2 className='text-4xl font-bold text-primary-400 mb-4 my-8 lg:my-12 text-center lg:text-left'>About Me</h2>

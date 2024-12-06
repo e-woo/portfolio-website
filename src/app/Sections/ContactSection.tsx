@@ -23,9 +23,9 @@ const ContactSection = () => {
     }
 
     return (
-        <section className='grid md:grid-cols-2 my-12 pt-48 pb-24 lg:px-16 gap-4 relative' id='contact'>
+        <section className='grid md:grid-cols-7 my-12 pt-48 pb-24 lg:px-16 gap-4 relative' id='contact'>
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
-            <div className='flex flex-col gap-4 items-center md:items-start'>
+            <div className='flex flex-col md:col-span-3 gap-4 items-center md:items-start'>
                 <h2 className='text-5xl lg:text-7xl text-center md:text-left font-bold mb-4'>Contact Me</h2>
                 <p className='text-center md:text-left'>I'm always open to new opportunities. Feel free to get in touch with me!</p>
                 <div className='flex flex-row gap-4 items-center'>
@@ -51,7 +51,7 @@ const ContactSection = () => {
                     </button>
                 </Link>
             </div>
-            <div>
+            <div className='md:col-span-3'>
                 {formSubmitted ? (
                 <p className='mt-24 md:mt-8 text-2xl text-[#00ff9d] text-center md:text-left'>Message submitted!</p>
                 ) :

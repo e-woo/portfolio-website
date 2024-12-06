@@ -78,13 +78,18 @@ const ScrollDots = ({ activeIndex, scrollItems } : { activeIndex: number, scroll
             {scrollItems.map((scrollItem, index) => (
                 <div key={index} className='group'>
                     <div key={index}
-                        className={` flex flex-row justify-end items-center w-fit gap-2 cursor-pointer py-1 ${activeIndex === index ? 'px-4' : 'px-2'}`}
+                        className={` flex flex-row justify-end items-center w-fit gap-2 cursor-pointer py-1 
+                            ${activeIndex === index ? 'px-4' : 'px-2'}`}
                         ref={(el) => { listItemsRef.current[index] = el; }}
                         onClick={() => handleDotClick(index)}
                         >
-                            <div className={`mr-1 group-hover:text-lg transition-all duration-300 ${activeIndex === index ? 'text-white text-lg' : 'text-base text-gray-400 group-hover:text-white'}`}>{scrollItem.sectionName}</div>
+                            <div className={`mr-1 group-hover:text-lg transition-all duration-300 select-none
+                                ${activeIndex === index ? 'text-white text-lg' : 'text-base text-gray-400 group-hover:text-white'}`}>
+                                    {scrollItem.sectionName}
+                            </div>
                             <div
-                                className={`my-2 rounded-full transition-all duration-300 cursor-pointer group-hover:scale-150 w-4 h-4 ${activeIndex === index ? 'scale-150 bg-white' : 'bg-gray-400 group-hover:bg-white'}`}
+                                className={`my-2 rounded-full transition-all duration-300 cursor-pointer group-hover:scale-[175%] w-4 h-4 
+                                    ${activeIndex === index ? 'scale-[175%] bg-white' : 'bg-gray-400 group-hover:bg-white'}`}
                             />
                     </div>
                 </div>

@@ -44,7 +44,7 @@ const Navbar = () => {
 						</button>
 					}
 				</div>
-				<div className='menu hidden lg:block lg:w-auto' id='navbar'>
+				{/* <div className='menu hidden lg:block lg:w-auto' id='navbar'>
 					<ul className='flex items-center p-4 md:p-0 md:flex-row md:space-x-8 mt-0 gap-3'>
 						{
 							navItems.map((item, index) =>
@@ -53,7 +53,7 @@ const Navbar = () => {
 							</li>)
 						}
 					</ul>
-				</div>
+				</div> */}
 			</div>
 			{navbarOpen ? <MenuOverlay navItems={navItems} onClick={() => setNavbarOpen(false)}/> : null}
 		</nav>

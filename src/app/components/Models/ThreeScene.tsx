@@ -13,6 +13,7 @@ const cameraStates = [
     { position: new THREE.Vector3(0.48, 2.33, 0.56), rotation: new THREE.Euler(-0.54, 0.60, 0.32) },
     { position: new THREE.Vector3(-2.97, 3.62, 1.04), rotation: new THREE.Euler(-0.40, 0.06, 0.11) },
     { position: new THREE.Vector3(-0.86, 3.89, -1.22), rotation: new THREE.Euler(-0.44, 0.22, 0.10) },
+    { position: new THREE.Vector3(-0.86, 3.89, -1.22), rotation: new THREE.Euler(-0.44, 0.22, 0.10) },
 ];
 
 const bgOpacity = [20, 30, 30, 30, 30];
@@ -209,7 +210,7 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
 
     return (
         <div className='fixed top-0 left-0'>
-            <div ref={mountRef} className='' />
+            <div ref={mountRef} className={`transition-all duration-700 ${currentTargetIndexRef.current === cameraStates.length - 1 ? 'blur-lg' : ''}`} />
             {/* <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1, color: 'white' }}>
                 <h3>Camera Properties</h3>
                 <p><strong>Position:</strong> x: {cameraProperties.position.x.toFixed(2)}, y: {cameraProperties.position.y.toFixed(2)}, z: {cameraProperties.position.z.toFixed(2)}</p>

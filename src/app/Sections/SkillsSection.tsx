@@ -1,19 +1,18 @@
 import React from 'react'
 import BoxedList from '../components/SkillsList'
+import VerticalList from '../components/VerticalList'
 
 const SkillsSection = () => {
-  return (
-  	// <div id='skills' className='pt-24'>
-	// 	<BoxedList header='Languages' items={languages}/>
-	// 	<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
-	// </div>
-	<div className='w-full h-full lg:grid lg:grid-cols-2 gap-8 items-center py-8 px-4 mt-12 sm:py-16 flex flex-col'>
-		<div className=''>
-			<div>
-			 </div>
+	return (
+		// <div id='skills' className='pt-24'>
+		// 	<BoxedList header='Languages' items={languages}/>
+		// 	<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
+		// </div>
+		<div className='w-full h-full lg:grid lg:grid-cols-4 gap-12 items-center py-8 px-8 mt-12 flex flex-col'>
+			<VerticalList header='Languages' listItems={languages} />
+			<VerticalList header='Libraries/Frameworks' listItems={libsAndFrameworks} />
 		</div>
-	</div>
-  )
+	)
 }
 
 const languages = [

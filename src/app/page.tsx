@@ -9,13 +9,14 @@ import Footer from './components/Footer';
 import ThreeScene, { CameraControls } from './components/Models/ThreeScene';
 import { useEffect, useRef, useState } from 'react';
 import ScrollDots, { ScrollItem } from './components/ScrollDots';
+import ExperienceSection from './Sections/ExperienceSection';
 
-const sectionNames: string[] = ['Top', 'About Me', 'Skills', 'Projects', 'Contact'];
+const sectionNames: string[] = ['Top', 'About Me', 'Experience', 'Skills', 'Projects', 'Contact'];
 const sections = sectionNames.map((sectionName) => sectionName.replace(' ', ''));
 
 export default function Home() {
 	const sceneRef = useRef<CameraControls | null>(null);
-	const scrollTime = 1; // Time in seconds to scroll to the next section
+	const scrollTime = 0.5; // Time in seconds to scroll to the next section
 
 	const [currentSection, setCurrentSection] = useState<number>(0);
 	const isScrolling = useRef<boolean>(false); // Prevent rapid scrolling
@@ -26,7 +27,7 @@ export default function Home() {
 		sectionName: sectionName,
 		callback: (index: number) => {
 			if (sceneRef.current) {
-				sceneRef.current.moveToPosition(index, scrollTime * 2);
+				sceneRef.current.moveToPosition(index, scrollTime * 4);
 			}
 			setCurrentSection(index);
 			scrollToSection(index);
@@ -61,7 +62,7 @@ export default function Home() {
 		const nextSection = Math.max(0, Math.min(sections.length - 1, currentSection + direction));
 
 		if (sceneRef.current) {
-			sceneRef.current.moveToPosition(nextSection, scrollTime);
+			sceneRef.current.moveToPosition(nextSection, scrollTime * 4);
 		}
 
 		if (nextSection !== currentSection) {
@@ -90,19 +91,30 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    // Add scroll event listener
-    window.addEventListener('wheel', handleScroll, { passive: true });
-    window.addEventListener('touchstart', handleTouchStart, { passive: false });
-    window.addEventListener('touchmove', handleScroll, { passive: false });
+	useEffect(() => {
+		// Add scroll event listener
+		window.addEventListener('wheel', handleScroll, { passive: true });
+		window.addEventListener('touchstart', handleTouchStart, { passive: false });
+		window.addEventListener('touchmove', handleScroll, { passive: false });
 
-    // Clean up event listener on component unmount
-    return () => {
-		window.removeEventListener('wheel', handleScroll);
-		window.removeEventListener('touchstart', handleTouchStart);
-		window.removeEventListener('touchmove', handleScroll);
-    };
-  }, [currentSection, isScrolling]);
+		// Clean up event listener on component unmount
+		return () => {
+			window.removeEventListener('wheel', handleScroll);
+			window.removeEventListener('touchstart', handleTouchStart);
+			window.removeEventListener('touchmove', handleScroll);
+		};
+	}, [currentSection, isScrolling]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			scrollToSection(currentSection);
+		}
+
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		}
+	});
 
 	return (
 		// <main className='flex min-h-screen flex-col bg-[#121212] font-nunito'>
@@ -116,7 +128,7 @@ export default function Home() {
 		// 	</div>
 		// 	<Footer/>
 		// </main>
-		<div className='h-screen w-screen overflow-hidden relative'>
+		<div className='h-screen w-screen overflow-hidden relative font-varela'>
 			<ThreeScene ref={sceneRef} />
       {/* Each inner div is a scroll snap point */}
       {/* <div key="section1" id="section1" className="snap-start bg-red-400 h-screen w-screen"></div>
@@ -134,6 +146,9 @@ export default function Home() {
 				</div>
 				<div key="AboutMe" id="AboutMe" className='h-screen w-screen'>
 					<AboutSection />
+				</div>
+				<div key="Experience" id="Experience" className='h-screen w-screen'>
+					<ExperienceSection />
 				</div>
 				<div key="Skills" id="Skills" className='h-screen w-screen'>
 					<SkillsSection />

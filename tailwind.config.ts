@@ -16,6 +16,7 @@ const config: Config = {
 			},
 			fontFamily: {
 				nunito: ['Nunito', ...defaultTheme.fontFamily.sans],
+				varela: ['Varela', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				...colors,
