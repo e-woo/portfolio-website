@@ -4,10 +4,6 @@ import VerticalList from '../components/VerticalList'
 
 const SkillsSection = () => {
 	return (
-		// <div id='skills' className='pt-24'>
-		// 	<BoxedList header='Languages' items={languages}/>
-		// 	<BoxedList header='Libraries and Frameworks' items={libsAndFrameworks}/>
-		// </div>
 		<div className='w-full h-full lg:grid lg:grid-cols-4 gap-12 items-center py-8 px-8 mt-12 flex flex-col'>
 			<VerticalList header='Languages' listItems={languages} />
 			<VerticalList header='Libraries/Frameworks' listItems={libsAndFrameworks} />
