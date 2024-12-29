@@ -27,6 +27,14 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [],
+	plugins: [
+		({ addUtilities }: { addUtilities: (utilities: any, options?: any) => void }) => {
+			addUtilities(
+				{
+					'ignore-page-scroll': {}
+				}
+			)
+		}
+	],
 }
 export default config

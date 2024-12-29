@@ -4,7 +4,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 const HeroSection = () => {
 	return (
-		<section className='lg:py-16 w-full h-full flex items-center px-16'>
+		<section className='lg:py-16 w-full h-full flex items-center justify-center lg:justify-start px-16'>
 			<div className='grid grid-cols-1 lg:grid-cols-12'>
 				<div className='col-span-9 place-self-center text-center lg:text-left lg:justify-self-start'>
 					<h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold select-none h-28 lg:h-auto'>

@@ -34,35 +34,46 @@ const ScrollDots = ({ activeIndex, scrollItems } : { activeIndex: number, scroll
         }
     };
 
-  // Handle when transition starts
-  const handleTransitionStart = () => {
-    requestAnimationFrame(() => updateHighlightPosition()); // Update immediately on the next frame
-  };
+    // Handle when transition starts
+    const handleTransitionStart = () => {
+        requestAnimationFrame(() => updateHighlightPosition()); // Update immediately on the next frame
+    };
 
-  // Handle when transition ends
-  const handleTransitionEnd = () => {
-    updateHighlightPosition(); // Make sure highlight is up-to-date after transition
-  };
+    // Handle when transition ends
+    const handleTransitionEnd = () => {
+        updateHighlightPosition(); // Make sure highlight is up-to-date after transition
+    };
 
-  // Monitor changes to activeIndex (when the selection changes)
-  useEffect(() => {
-    updateHighlightPosition(); // Update position when the activeIndex changes
+    // Monitor changes to activeIndex (when the selection changes)
+    useEffect(() => {
+        updateHighlightPosition(); // Update position when the activeIndex changes
 
-    // Get the selected item and observe the transition
-    const selectedItem = listItemsRef.current[activeIndex];
-    if (selectedItem) {
-      selectedItem.addEventListener('transitionstart', handleTransitionStart); // Listen for the start of the transition
-      selectedItem.addEventListener('transitionend', handleTransitionEnd); // Listen for when the transition ends
-
-      // Cleanup listeners when the component unmounts or index changes
-      return () => {
+        // Get the selected item and observe the transition
+        const selectedItem = listItemsRef.current[activeIndex];
         if (selectedItem) {
-          selectedItem.removeEventListener('transitionstart', handleTransitionStart);
-          selectedItem.removeEventListener('transitionend', handleTransitionEnd);
+        selectedItem.addEventListener('transitionstart', handleTransitionStart); // Listen for the start of the transition
+        selectedItem.addEventListener('transitionend', handleTransitionEnd); // Listen for when the transition ends
+
+        // Cleanup listeners when the component unmounts or index changes
+        return () => {
+            if (selectedItem) {
+            selectedItem.removeEventListener('transitionstart', handleTransitionStart);
+            selectedItem.removeEventListener('transitionend', handleTransitionEnd);
+            }
+        };
         }
-      };
-    }
-  }, [activeIndex]);
+    }, [activeIndex]);
+
+    useEffect(() => {
+        const update = () => {
+            updateHighlightPosition();
+        }
+
+        window.addEventListener('resize', update);
+        return () => {
+            window.removeEventListener('resize', update);
+        }
+    });
 
     return (
         <div className='flex flex-col items-end z-50 gap-4'>
@@ -83,7 +94,7 @@ const ScrollDots = ({ activeIndex, scrollItems } : { activeIndex: number, scroll
                         ref={(el) => { listItemsRef.current[index] = el; }}
                         onClick={() => handleDotClick(index)}
                         >
-                            <div className={`mr-1 group-hover:text-lg transition-all duration-300 select-none
+                            <div className={`hidden lg:block mr-1 group-hover:text-lg transition-all duration-300 select-none
                                 ${activeIndex === index ? 'text-white text-lg' : 'text-base text-gray-400 group-hover:text-white'}`}>
                                     {scrollItem.sectionName}
                             </div>

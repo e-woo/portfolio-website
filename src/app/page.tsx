@@ -40,15 +40,25 @@ export default function Home() {
 			return;
 		}
 
+
 		let delta = 0;
+		let hoveredElement = null;
 		if (event instanceof WheelEvent) {
 			delta = event.deltaY;
+			hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
 		} else if (event instanceof TouchEvent) {
-			const touchMoveY = event.touches[0].clientY;
+			const touch = event.touches[0];
+			const touchMoveY = touch.clientY;
 			touchDeltaY.current = touchStartY.current - touchMoveY;
 			delta = touchDeltaY.current;
+
+			hoveredElement = document.elementFromPoint(touch.clientX, touch.clientY);
 		}
 
+		console.log(hoveredElement?.classList)
+		if (hoveredElement?.classList.contains('ignore-page-scroll')) {
+			return;
+		}
 		if (delta > 0 && currentSection >= sections.length - 1) {
 			return;
 		}

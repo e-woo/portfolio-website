@@ -209,7 +209,7 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
     }));
 
     return (
-        <div className='fixed top-0 left-0'>
+        <div className='hidden lg:block fixed top-0 left-0'>
             <div ref={mountRef} className={`transition-all duration-700 ${currentTargetIndexRef.current === cameraStates.length - 1 ? 'blur-lg' : ''}`} />
             {/* <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1, color: 'white' }}>
                 <h3>Camera Properties</h3>
