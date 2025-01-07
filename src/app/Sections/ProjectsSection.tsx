@@ -1,25 +1,43 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
+import ProjectItem from '../components/ProjectItem';
 const ProjectsSection = () => {
 	return (
-		<div id='projects' className='pt-24'>
-			<h1 className='py-16 place-self-center text-center text-6xl font-bold'>Projects</h1>
-			<div>
-				<ul className='grid lg:mx-16 lg:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-24 xl:gap-12'>
-					{projects.map((project, index) => 
-					<li key={index}>
-						<ProjectCard name={project.name} tools={project.tools} description={project.description} imagePath={project.imagePath} link={project.link} githubLink={project.githubLink}/>
-					</li>)
+		<div className='w-full h-full lg:grid lg:grid-cols-4 gap-12 items-center py-8 px-8 mt-12 flex flex-col'>
+			<div className='flex flex-col gap-4 lg:gap-8'>
+				<h3 className='text-3xl lg:text-5xl font-bold text-primary-400'>Projects</h3>
+				<ul className='flex flex-col gap-2 lg:gap-4'>
+					{
+						projects.map((project) => (
+							<li>
+								<ProjectItem projectName={project.name}
+									iconCss={project.iconCss}
+								/>
+							</li>
+						))
 					}
 				</ul>
 			</div>
 		</div>
+		// <div id='projects' className='pt-24'>
+		// 	<h1 className='py-16 place-self-center text-center text-6xl font-bold'>Projects</h1>
+		// 	<div>
+		// 		<ul className='grid lg:mx-16 lg:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-24 xl:gap-12'>
+		// 			{projects.map((project, index) => 
+		// 			<li key={index}>
+		// 				<ProjectCard name={project.name} tools={project.tools} description={project.description} imagePath={project.imagePath} link={project.link} githubLink={project.githubLink}/>
+		// 			</li>)
+		// 			}
+		// 		</ul>
+		// 	</div>
+		// </div>
 	)
 }
 
 const projects = [
 	{
 		name: 'Nether Depths Mod',
+		iconCss: 'bx bx-cube',
 		tools: 'Java, SpongePowered Mixin',
 		description: <>
 			The Nether Depths Mod is a mod developed for the popular game <i>Minecraft: Java Edition</i>, using the <i>Fabric API</i>, a powerful modding tool.
@@ -34,6 +52,7 @@ const projects = [
 	},
 	{
 		name: 'DinoDB',
+		iconCss: 'bx bx-globe',
 		tools: 'Typescript, Javascript, HTML, Tailwind CSS, React, Express.js, MySQL',
 		description: <>
 			DinoDB is a full stack team project which involved us creating a website and a database, with MySQL.
@@ -48,6 +67,7 @@ const projects = [
 	},
 	{
 		name: 'Recommendify',
+		iconCss: 'bx bxl-spotify',
 		tools: 'Typescript, HTML, Tailwind CSS, React',
 		description: <>
 			Recommendify is a simple web application that generates Spotify playlists for users.
@@ -63,6 +83,7 @@ const projects = [
 	}
 	// {
 	// 	name: '',
+	// iconCss: '',
 	// 	tools: '',
 	// 	description: <></>,
 	// 	imagePath: '',
