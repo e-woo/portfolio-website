@@ -55,7 +55,7 @@ export default function Home() {
 			hoveredElement = document.elementFromPoint(touch.clientX, touch.clientY);
 		}
 
-		console.log(hoveredElement?.classList)
+		// console.log(hoveredElement?.classList)
 		if (hoveredElement?.classList.contains('ignore-page-scroll')) {
 			return;
 		}

@@ -128,10 +128,9 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
 
                     if (targetPositionRef.current) {
                         cameraRef.current.position.lerp(targetPositionRef.current, positionProgress);
-                        if (targetPositionRef.current.x !== cameraRef.current.position.x) {
-                        
-                            console.log(progress)
-                        }
+                        // if (targetPositionRef.current.x !== cameraRef.current.position.x) {
+                        //     console.log(progress)
+                        // }
                     }
                     if (targetRotationRef.current) {
                         const quaternion = new THREE.Quaternion().setFromEuler(cameraRef.current.rotation);
@@ -140,7 +139,7 @@ const ThreeScene = forwardRef<CameraControls>((props, ref) => {
                     }
 
                     if (progress >= 1) {
-                        console.log("Done!");
+                        // console.log("Done!");
                         if (targetRotationRef.current) {
                             const euler = new THREE.Euler().setFromQuaternion(targetRotationRef.current);
                             cameraRef.current.rotation.set(euler.x, euler.y, euler.z);
